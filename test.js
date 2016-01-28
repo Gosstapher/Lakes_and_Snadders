@@ -31,6 +31,19 @@ describe('Game', function(){
     var output = game1.dice.roll();
     assert.equal(true, output <= 6 && output > 0);
   });
+  it('the game should have players', function(){
+    var game1 = new Game();
+    var player1 = new Player('Robert');
+    var player2 = new Player('Rob');
+    var player3 = new Player('Bob');
+    var player4 = new Player('Bobby');
+    game1.addPlayer(player1);
+    game1.addPlayer(player2);
+    game1.addPlayer(player3);
+    game1.addPlayer(player4);
+    assert.equal(4, game1.players.length);
+  });
+    
   // it('the player should be able to move to another square on the board', function(){
   //   var board1 = new Board();
   //   board1.addSquares();
