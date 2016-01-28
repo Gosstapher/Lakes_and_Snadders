@@ -52,6 +52,15 @@ describe('Game', function(){
     var output = game1.players[0].position;
     assert.equal(true, output <= 7 && output > 1);
   });
+  it('the game should be able to check where the players are', function(){
+    var game1 = new Game();
+    game1.board.addSquares();
+    var player1 = new Player('Bob')
+    game1.addPlayer(player1);
+    game1.move(game1.players[0]);
+    var output = game1.whereAreThePlayers();
+    assert.equal(true, output <= 7 && output > 1);
+  });
 })
 
 
