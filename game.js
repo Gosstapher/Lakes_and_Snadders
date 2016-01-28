@@ -12,6 +12,10 @@ var Game = function(){
   },
   this.addPlayer = function(player){
     this.players.push(player);
+  },
+  this.move = function(player){
+    var spacesMoved = this.dice.roll();
+    player.position += spacesMoved;
   }
 }
 

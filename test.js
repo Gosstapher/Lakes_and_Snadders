@@ -43,12 +43,15 @@ describe('Game', function(){
     game1.addPlayer(player4);
     assert.equal(4, game1.players.length);
   });
-    
-  // it('the player should be able to move to another square on the board', function(){
-  //   var board1 = new Board();
-  //   board1.addSquares();
-  //   var player1 = new Player('Bob')
-  // });
+  it('the player should be able to move to another square on the board', function(){
+    var game1 = new Game();
+    game1.board.addSquares();
+    var player1 = new Player('Bob')
+    game1.addPlayer(player1);
+    game1.move(game1.players[0]);
+    var output = game1.players[0].position;
+    assert.equal(true, output <= 7 && output > 1);
+  });
 })
 
 
