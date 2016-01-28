@@ -26,6 +26,11 @@ describe('Game', function(){
     game1.setUpGame();
     assert.equal(64, game1.board.squares.length);
   });
+  it('the game should have a dice, which can display a number between 1 and 6 inclusive', function(){
+    var game1 = new Game();
+    var output = game1.dice.roll();
+    assert.equal(true, output <= 6 && output > 0);
+  });
   // it('the player should be able to move to another square on the board', function(){
   //   var board1 = new Board();
   //   board1.addSquares();
